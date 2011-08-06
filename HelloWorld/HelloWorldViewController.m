@@ -62,11 +62,12 @@
     
     NSString *username = self.nameField.text;
     if([username length] <= 0){
-        username = @"World";
+        username = @"Stranger";
     }
     
-    NSString *greetingText = [NSString stringWithFormat:@"Hello %@", username];
+    NSString *greetingText = [[NSString alloc] initWithFormat:@"Hello, %@!", username];
     self.label.text = greetingText;
+    [greetingText release];
     
 }
 @end
